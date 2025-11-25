@@ -1,19 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Hosting</title>
-    <link rel="stylesheet" href="SEVNODESPanel/hosting-panel/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <div class="panel">
-        <h1>Bienvenido al Panel de Hosting</h1>
-        <p>Frontend funcionando correctamente con estilo CSS.</p>
 
-        <button onclick="mostrarMensaje()">
-            Probar Funcionamiento
-        </button>
-    </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">MiHosting</h2>
+        <nav class="menu">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Dominios</a>
+            <a href="#">FTP</a>
+            <a href="#">Bases de datos</a>
+            <a href="#">Usuarios</a>
+            <a href="#">Ajustes</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        <header class="header">
+            <h1>Dashboard</h1>
+            <div class="user-box">
+                <span class="user-name">Administrador</span>
+            </div>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <h3>Dominios activos</h3>
+                <p class="number">12</p>
+            </div>
+            <div class="card">
+                <h3>Bases de datos</h3>
+                <p class="number">8</p>
+            </div>
+            <div class="card">
+                <h3>Usuarios FTP</h3>
+                <p class="number">5</p>
+            </div>
+            <div class="card">
+                <h3>Uso del servidor</h3>
+                <p class="number">43%</p>
+            </div>
+        </section>
+
+        <section class="panel-box">
+            <h2>Información del Servidor</h2>
+            <p>Estado general: <strong>Online</strong></p>
+            <p>Última actualización: 10 minutos atrás</p>
+            <button class="primary-button" onclick="mostrarMensaje()">Probar conexión</button>
+        </section>
+    </main>
 
     <script src="js/main.js"></script>
 </body>
