@@ -6,6 +6,7 @@ body {
     display: flex;
     height: 100vh;
     overflow: hidden;
+    color: #333;
 }
 
 h1, h2, h3 {
@@ -20,6 +21,7 @@ h1, h2, h3 {
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
+    transition: 0.3s ease;
 }
 
 .logo {
@@ -58,6 +60,8 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .user-box {
@@ -120,4 +124,95 @@ h1, h2, h3 {
 
 .primary-button:hover {
     background: #2a2ad1;
+}
+
+/* ============================= */
+/*   RESPONSIVE DESIGN (móvil)   */
+/* ============================= */
+
+@media (max-width: 900px) {
+    /* La sidebar se hace más pequeña */
+    .sidebar {
+        width: 200px;
+        padding: 20px 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu a {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    /* Convertimos todo en diseño móvil */
+    body {
+        flex-direction: column;
+    }
+
+    /* Sidebar arriba tipo menú */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-x: auto;
+        gap: 20px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .menu a {
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    /* Main content ocupa todo abajo */
+    .main-content {
+        padding: 15px;
+        height: calc(100vh - 100px);
+    }
+
+    /* Las cards se alinean a 1 por fila si es necesario */
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card .number {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    /* Texto más pequeño */
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .card .number {
+        font-size: 22px;
+    }
+
+    .primary-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
 }
